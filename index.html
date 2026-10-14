@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f0f12" />
+  <title>نور الشام · المنيو</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="apple-touch-icon" href="logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== الشريط العلوي ===== -->
+  <header class="topbar" id="topbar">
+    <div class="brand">
+      <img class="brand-logo" src="logo.svg" alt="" />
+      <span class="brand-name">نور <b>الشام</b></span>
+    </div>
+    <div class="topbar-actions">
+      <span class="table-pill" id="tablePill">طاولة ٧</span>
+      <button class="icon-btn" id="themeBtn" aria-label="تبديل الوضع">
+        <svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== الواجهة ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-media" id="heroMedia">
+      <img class="hero-bg" src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=1600&q=80&auto=format&fit=crop" alt="" fetchpriority="high" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-glow g1"></div>
+    <div class="hero-glow g2"></div>
+    <div class="hero-shine"></div>
+
+    <div class="hero-content" id="heroContent">
+      <span class="hero-tag anim" style="--i:0"><i class="dot"></i> مفتوح الآن · حتى ٢ بعد منتصف الليل</span>
+      <h1>
+        <span class="w anim" style="--i:1">طعم</span> <span class="w anim" style="--i:2">الشام</span><br/>
+        <span class="rotator anim" style="--i:3" id="rotator">
+          <b class="on">بلمسة سريعة</b>
+          <b>شاورما ع الأصول</b>
+          <b>برغر على الفحم</b>
+          <b>بروستد مقرمش</b>
+        </span>
+      </h1>
+      <p class="anim" style="--i:4">برغر مشوي على الفحم، شاورما على الأصول، بروستد مقرمش وبيتزا طازجة — تُحضَّر بحب وتُقدَّم بسرعة.</p>
+      <button class="hero-cta anim" style="--i:5" id="heroCta">
+        تصفّح المنيو
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+      </button>
+      <div class="hero-meta">
+        <div class="anim" style="--i:6"><strong data-count="4.8" data-dec="1">٠</strong><small>★ التقييم</small></div>
+        <div class="anim" style="--i:7"><strong data-count="15">٠</strong><small>دقيقة تحضير</small></div>
+        <div class="anim" style="--i:8"><strong data-count="40" data-prefix="+">٠</strong><small>صنف</small></div>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== البحث والأقسام ===== -->
+  <div class="sticky-nav" id="stickyNav">
+    <div class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="searchInput" type="search" placeholder="ابحث عن شاورما، برغر، مشروب…" autocomplete="off" />
+    </div>
+    <nav class="chips" id="chips"></nav>
+  </div>
+
+  <!-- ===== العرض ===== -->
+  <section class="offer">
+    <div class="offer-text">
+      <span class="offer-label">عرض اليوم فقط</span>
+      <h3>وجبة نور الشام −٢٥٪</h3>
+      <p>أي برغر + بطاطا + مشروب</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80&auto=format&fit=crop" alt="وجبة" />
+  </section>
+
+  <!-- ===== المنيو ===== -->
+  <main id="menu" class="menu"></main>
+
+  <p class="empty" id="emptyState" hidden>لا توجد أصناف مطابقة لبحثك 🍔</p>
+
+  <footer class="footer">
+    <div class="brand"><img class="brand-logo" src="logo.svg" alt="" /><span class="brand-name">نور <b>الشام</b></span></div>
+    <p>دمشق · شارع الحمرا · <span dir="ltr">+963 11 000 0000</span></p>
+    <p class="muted">الأسعار تشمل الضريبة · اسأل الموظف عن مسببات الحساسية</p>
+  </footer>
+
+  <!-- ===== شريط الطلب ===== -->
+  <button class="cart-bar" id="cartBar" aria-label="عرض الطلب">
+    <span class="cart-count" id="cartCount">٠</span>
+    <span>عرض الطلب</span>
+    <strong id="cartTotal">٠ ل.س</strong>
+  </button>
+
+  <!-- ===== تفاصيل الصنف ===== -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <div class="sheet" id="itemSheet" role="dialog" aria-modal="true">
+    <button class="sheet-close" data-close aria-label="إغلاق">✕</button>
+    <div class="sheet-img"><img id="sheetImg" alt="" /></div>
+    <div class="sheet-body">
+      <div class="sheet-badges" id="sheetBadges"></div>
+      <h2 id="sheetTitle"></h2>
+      <p id="sheetDesc" class="muted"></p>
+      <div class="sheet-info" id="sheetInfo"></div>
+
+      <h4>اختر الحجم</h4>
+      <div class="options" id="sizeOptions"></div>
+
+      <h4>إضافات</h4>
+      <div class="extras" id="extraOptions"></div>
+
+      <div class="sheet-footer">
+        <div class="qty">
+          <button id="qtyPlus" aria-label="زيادة">+</button>
+          <span id="qtyVal">١</span>
+          <button id="qtyMinus" aria-label="إنقاص">−</button>
+        </div>
+        <button class="btn-primary" id="addToCart">أضف · <span id="sheetPrice">٠ ل.س</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== سلة الطلب ===== -->
+  <div class="sheet cart-sheet" id="cartSheet" role="dialog" aria-modal="true">
+    <button class="sheet-close" data-close aria-label="إغلاق">✕</button>
+    <div class="sheet-body">
+      <h2>طلبك</h2>
+      <div class="segmented" id="orderType" role="group" aria-label="نوع الطلب">
+        <button class="active" data-type="d">🍽 صالة</button>
+        <button data-type="t">🛍 سفري</button>
+      </div>
+      <div class="cart-list" id="cartList"></div>
+      <label class="note">
+        <span>ملاحظة للمطبخ (اختياري)</span>
+        <input id="orderNote" maxlength="80" placeholder="مثلاً: بدون بصل، ثومية زيادة…" autocomplete="off" />
+      </label>
+      <div class="summary">
+        <div><span>عدد القطع</span><span id="sumCount">٠</span></div>
+        <div class="total"><span>المجموع</span><span id="sumTotal">٠ ل.س</span></div>
+      </div>
+      <button class="btn-primary wide" id="placeOrder">
+        <svg viewBox="0 0 24 24" class="btn-ico"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h3v3h-3zM18 18h3v3h-3zM18 14h3M14 18v3"/></svg>
+        إنشاء رمز الطلب
+      </button>
+      <p class="hint">أظهر الرمز للكاشير، والدفع واستلام الوصل يكونان عنده.</p>
+    </div>
+  </div>
+
+  <!-- ===== رمز QR للطلب ===== -->
+  <div class="sheet qr-sheet" id="qrSheet" role="dialog" aria-modal="true">
+    <button class="sheet-close" data-close aria-label="إغلاق">✕</button>
+    <div class="sheet-body">
+      <div class="qr-head">
+        <span class="muted">رقم طلبك</span>
+        <strong id="qrNumber" dir="ltr">#٠</strong>
+        <span class="qr-type" id="qrType">صالة</span>
+      </div>
+      <div class="qr-card">
+        <div id="qrCode" class="qr-code"></div>
+        <img class="qr-logo" src="logo.svg" alt="" />
+        <i class="qr-scan"></i>
+      </div>
+      <div class="qr-summary"><span id="qrItems"></span><strong id="qrTotal"></strong></div>
+      <ol class="qr-steps">
+        <li>توجّه إلى الكاشير وأظهر له هذا الرمز</li>
+        <li>يمسحه بكاميرا موبايله ويُدخل طلبك</li>
+        <li>ادفع واستلم الوصل، ثم سلّمه لاستلام طلبك</li>
+      </ol>
+      <div class="qr-actions">
+        <button class="btn-ghost" id="qrEdit">تعديل الطلب</button>
+        <button class="btn-primary" id="qrNew">طلب جديد</button>
+      </div>
+      <a class="qr-test" id="qrLink" target="_blank" rel="noopener">فتح صفحة الكاشير (للتجربة)</a>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
